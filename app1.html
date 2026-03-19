@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>表白网页</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: red;
+            margin-top: 100px;
+        }
+        button {
+            font-size: 20px;
+            margin: 20px;
+            padding: 10px 20px;
+            position: absolute;
+        }
+        #yes {
+            left: 40%;
+            top: 60%;
+            background-color: red;
+            color: white;
+            animation: blink 1s infinite;
+        }
+        #no {
+            left: 55%;
+            top: 60%;
+        }
+        @keyframes blink {
+            0% { background-color: red; color: white; }
+            50% { background-color: pink; color: black; }
+            100% { background-color: red; color: white; }
+        }
+    </style>
+</head>
+<body>
+    <h1>可以成为我的恋人吗？</h1>
+    <button id="yes" onclick="alert('太好了！我爱你 ❤️')">可以</button>
+    <button id="no">真的吗</button>
+
+    <script>
+        const noBtn = document.getElementById("no");
+        noBtn.addEventListener("mouseover", () => {
+            const x = Math.floor(Math.random() * (window.innerWidth - 100));
+            const y = Math.floor(Math.random() * (window.innerHeight - 50));
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        });
+    </script>
+</body>
+</html>
